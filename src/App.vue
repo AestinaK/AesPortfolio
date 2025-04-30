@@ -1,3 +1,9 @@
+
+<script setup>
+import Navbar from './components/Navbar.vue'
+
+</script>
+
 <template>
   <Navbar />
   <router-view />
@@ -13,16 +19,6 @@
   </footer>
 </template>
 
-<script>
-import Navbar from './components/Navbar.vue'
-
-export default {
-  name: 'App',
-  components: {
-    Navbar
-  }
-}
-</script>
 
 <style lang="scss">
 #app {
@@ -33,6 +29,8 @@ export default {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding: 0;
+  margin: 0;
 }
 
 .footer {

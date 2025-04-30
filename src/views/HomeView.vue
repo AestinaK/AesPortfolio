@@ -1,3 +1,7 @@
+
+<script setup>
+
+</script>
 <template>
   <div class="home">
     <section class="hero">
@@ -47,11 +51,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'HomeView'
-}
-</script>
 
 <style scoped lang="scss">
 .home {

@@ -1,3 +1,38 @@
+<script setup>
+import {ref} from "vue";
+import ProjectCard from "../components/ProjectCard.vue";
+
+const projects = ref([
+    {
+      id: 1,
+      title: 'Enterprise HR Management System',
+      description: 'A comprehensive HR management solution built with ASP.NET Core and Vue.js',
+      technologies: ['ASP.NET Core', 'Vue.js', 'Entity Framework', 'SQL Server'],
+      image: new URL('../assets/astro.jpg', import.meta.url).href,
+      demoUrl: 'https://demo.example.com',
+      codeUrl: 'https://github.com/yourusername/hr-system'
+    },
+    {
+      id: 2,
+      title: 'E-commerce Platform',
+      description: 'Full-featured online store with payment integration',
+      technologies: ['C#', '.NET 6', 'MVC', 'Stripe API'],
+      image: new URL('../assets/astro.jpg', import.meta.url).href,
+      demoUrl: 'https://store.example.com',
+      codeUrl: 'https://github.com/yourusername/ecommerce'
+    },
+    {
+      id: 3,
+      title: 'Task Management App',
+      description: 'Collaborative task management application with real-time updates',
+      technologies: ['SignalR', 'Blazor', 'Azure Functions'],
+      image: new URL('../assets/astro.jpg', import.meta.url).href,
+      demoUrl: 'https://tasks.example.com',
+      codeUrl: 'https://github.com/yourusername/task-manager'
+    }
+    ])
+</script>
+
 <template>
   <div class="projects">
     <div class="container">
@@ -20,54 +55,12 @@
   </div>
 </template>
 
-<script>
-import ProjectCard  from "../components/ProjectCard.vue";
-
-export default {
-  name: 'ProjectsView',
-  components: {
-    ProjectCard
-  },
-  data() {
-    return {
-      projects: [
-        {
-          id: 1,
-          title: 'Enterprise HR Management System',
-          description: 'A comprehensive HR management solution built with ASP.NET Core and Vue.js',
-          technologies: ['ASP.NET Core', 'Vue.js', 'Entity Framework', 'SQL Server'],
-          image: require('@/assets/project1.jpg'),
-          demoUrl: 'https://demo.example.com',
-          codeUrl: 'https://github.com/yourusername/hr-system'
-        },
-        {
-          id: 2,
-          title: 'E-commerce Platform',
-          description: 'Full-featured online store with payment integration',
-          technologies: ['C#', '.NET 6', 'MVC', 'Stripe API'],
-          image: require('@/assets/project2.jpg'),
-          demoUrl: 'https://store.example.com',
-          codeUrl: 'https://github.com/yourusername/ecommerce'
-        },
-        {
-          id: 3,
-          title: 'Task Management App',
-          description: 'Collaborative task management application with real-time updates',
-          technologies: ['SignalR', 'Blazor', 'Azure Functions'],
-          image: require('@/assets/project3.jpg'),
-          demoUrl: 'https://tasks.example.com',
-          codeUrl: 'https://github.com/yourusername/task-manager'
-        }
-      ]
-    }
-  }
-}
-</script>
 
 <style scoped lang="scss">
 .projects {
   padding: 80px 0;
-
+  width: 100vw; /* Full viewport width */
+  margin-left: calc(-50vw + 50%); /* Counteracts any parent padding */
   .container {
     max-width: 1200px;
     margin: 0 auto;

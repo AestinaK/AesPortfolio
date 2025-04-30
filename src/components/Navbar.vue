@@ -1,3 +1,7 @@
+
+<script setup>
+</script>
+
 <template>
   <nav class="navbar">
     <div class="container">
@@ -12,11 +16,6 @@
   </nav>
 </template>
 
-<script>
-export default {
-  name: 'Navbar'
-}
-</script>
 
 <style scoped lang="scss">
 .navbar {
