@@ -87,6 +87,7 @@ const yearsOfExperience = computed(() => new Date().getFullYear() - startYear)
 const skills = ref([
   { name: 'C# / .NET', level: 90 },
   { name: 'ASP.NET Core', level: 85 },
+  {name:'Javascript',level: 80},
   { name: 'Vue.js', level: 80 },
   { name: 'SQL Server', level: 75 },
   { name: 'Posgresql', level: 75 },

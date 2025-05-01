@@ -83,6 +83,7 @@ const skills = ref([
   {
     name: 'Frontend',
     items: [
+        'Javascript',
       'Vue.js 3',
       'TypeScript',
       'Vite',
