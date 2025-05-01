@@ -19,7 +19,7 @@
         <h1 class="title">
           <span class="greeting">Hello!</span>
           <Typewriter
-              :texts="['I\'m Aestina', 'A .NET Developer', 'A Problem Solver']"
+              :texts="['I\'m Aestina Katwal', 'A .NET Developer', 'A Problem Solver']"
               :speed="100"
           />
         </h1>
@@ -94,8 +94,16 @@ const skills = ref([
 ])
 
 const downloadResume = () => {
-  // Implement download logic
-  console.log('Downloading resume...')
+  // Method 1: Direct public folder access (recommended)
+  const fileUrl = '/documents/AeljinaKatwal.pdf'
+  const link = document.createElement('a')
+  link.href = fileUrl
+  link.download = 'AeljinaKatwal.pdf' // Custom filename for download
+  link.target = '_blank' // Open in new tab as fallback
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+
 }
 </script>
 
@@ -107,7 +115,7 @@ const downloadResume = () => {
   overflow: hidden;
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: white;
-  padding: 4rem 2rem;
+  padding: 1rem 1rem;
   display: flex;
   align-items: center;
   justify-content: center;

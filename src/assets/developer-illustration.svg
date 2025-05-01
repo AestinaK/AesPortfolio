@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+    <!-- Background circle -->
+    <circle cx="250" cy="250" r="230" fill="#2c5364" opacity="0.2"/>
+
+    <!-- Developer figure -->
+    <g transform="translate(100, 80) scale(1.1)">
+        <!-- Head -->
+        <circle cx="150" cy="100" r="50" fill="#f5f5f5"/>
+
+        <!-- Glasses -->
+        <rect x="110" y="110" width="30" height="15" rx="2" fill="#42b983" opacity="0.8"/>
+        <rect x="160" y="110" width="30" height="15" rx="2" fill="#42b983" opacity="0.8"/>
+        <line x1="140" y1="118" x2="160" y2="118" stroke="#2c5364" stroke-width="2"/>
+
+        <!-- Body -->
+        <rect x="120" y="160" width="60" height="100" fill="#f5f5f5" rx="5"/>
+
+        <!-- Arms -->
+        <rect x="90" y="170" width="30" height="60" fill="#f5f5f5" rx="15"/>
+        <rect x="180" y="170" width="30" height="60" fill="#f5f5f5" rx="15"/>
+
+        <!-- Laptop -->
+        <rect x="100" y="210" width="100" height="60" fill="#0f2027" rx="3"/>
+        <rect x="105" y="215" width="90" height="45" fill="#203a43" rx="2"/>
+
+        <!-- Code lines -->
+        <line x1="115" y1="230" x2="145" y2="230" stroke="#42b983" stroke-width="3"/>
+        <line x1="115" y1="240" x2="130" y2="240" stroke="#42b983" stroke-width="3"/>
+        <line x1="115" y1="250" x2="160" y2="250" stroke="#42b983" stroke-width="3"/>
+
+        <!-- Keyboard -->
+        <rect x="110" y="275" width="80" height="15" fill="#0f2027" rx="2"/>
+
+        <!-- Decorations -->
+        <circle cx="80" cy="80" r="10" fill="#ff6b6b" opacity="0.6"/>
+        <circle cx="220" cy="60" r="15" fill="#42b983" opacity="0.4"/>
+    </g>
+
+    <!-- Floating tech icons -->
+    <g fill="#42b983" opacity="0.3">
+        <!-- C# Icon -->
+        <path transform="translate(400, 100) scale(0.7)" d="M12,2L2,7V17L12,22L22,17V7L12,2M12,4L20,8V16L12,20L4,16V8L12,4M11,8H13V11H16V13H13V16H11V13H8V11H11V8Z"/>
+
+        <!-- Vue Icon -->
+        <path transform="translate(350, 400) scale(0.8)" d="M12,12L8.6,6H15.4L12,12M12,3.2L17,11H20L12,1L4,11H7L12,3.2M12,18.8L7,11H4L12,21L20,11H17L12,18.8Z"/>
+
+        <!-- Database Icon -->
+        <path transform="translate(50, 150) scale(0.8)" d="M12,3C16.42,3 20,4.11 20,5.5C20,6.89 16.42,8 12,8C7.58,8 4,6.89 4,5.5C4,4.11 7.58,3 12,3M12,12C16.42,12 20,10.89 20,9.5C20,8.11 16.42,7 12,7C7.58,7 4,8.11 4,9.5C4,10.89 7.58,12 12,12M12,17C16.42,17 20,15.89 20,14.5C20,13.11 16.42,12 12,12C7.58,12 4,13.11 4,14.5C4,15.89 7.58,17 12,17M4,19.5C4,20.89 7.58,22 12,22C16.42,22 20,20.89 20,19.5C20,18.11 16.42,17 12,17C7.58,17 4,18.11 4,19.5Z"/>
+    </g>
+</svg>

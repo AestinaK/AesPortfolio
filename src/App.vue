@@ -35,7 +35,7 @@ import Navbar from './components/Navbar.vue'
 
 .footer {
   margin-top: auto;
-  background: #2c3e50;
+  background: rgba(15, 32, 39, 0.8); // Dark blue glass
   color: white;
   padding: 20px 0;
 
