@@ -96,10 +96,10 @@ const skills = ref([
 
 const downloadResume = () => {
   // Method 1: Direct public folder access (recommended)
-  const fileUrl = '/documents/AeljinaKatwal.pdf'
+  const fileUrl = '/documents/AestinaCv.pdf'
   const link = document.createElement('a')
   link.href = fileUrl
-  link.download = 'AeljinaKatwal.pdf' // Custom filename for download
+  link.download = 'AestinaCv.pdf' // Custom filename for download
   link.target = '_blank' // Open in new tab as fallback
   document.body.appendChild(link)
   link.click()
