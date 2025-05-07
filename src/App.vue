@@ -50,6 +50,7 @@ import Navbar from './components/Navbar.vue'
 
   .social-links {
     a {
+      -webkit-tap-highlight-color: transparent;
       color: white;
       margin-left: 15px;
       text-decoration: none;
@@ -58,6 +59,14 @@ import Navbar from './components/Navbar.vue'
         color: #42b983;
       }
     }
+  }
+}
+@media (max-width: 768px) {
+  .footer {
+    padding: 0.5rem 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    font-size: small;
   }
 }
 </style>

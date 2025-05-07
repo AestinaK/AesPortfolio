@@ -14,15 +14,15 @@ const props = defineProps({
   },
   speed: {
     type: Number,
-    default: 100 // milliseconds per character
+    default: 100
   },
   pause: {
     type: Number,
-    default: 2000 // milliseconds between phrases
+    default: 2000
   },
   eraseSpeed: {
     type: Number,
-    default: 50 // milliseconds per character when erasing
+    default: 50
   }
 })
 
@@ -35,22 +35,18 @@ const typeText = () => {
   const currentText = props.texts[currentIndex.value]
 
   if (isTyping.value) {
-    // Typing logic
     if (displayedText.value.length < currentText.length) {
       displayedText.value = currentText.substring(0, displayedText.value.length + 1)
       timeoutId = setTimeout(typeText, props.speed)
     } else {
-      // Switch to erasing after pause
       isTyping.value = false
       timeoutId = setTimeout(typeText, props.pause)
     }
   } else {
-    // Erasing logic
     if (displayedText.value.length > 0) {
       displayedText.value = displayedText.value.substring(0, displayedText.value.length - 1)
       timeoutId = setTimeout(typeText, props.eraseSpeed)
     } else {
-      // Move to next text and start typing again
       isTyping.value = true
       currentIndex.value = (currentIndex.value + 1) % props.texts.length
       timeoutId = setTimeout(typeText, props.speed)
@@ -59,11 +55,11 @@ const typeText = () => {
 }
 
 onMounted(() => {
-  typeText() // Start the animation
+  typeText()
 })
 
 onBeforeUnmount(() => {
-  clearTimeout(timeoutId) // Clean up on unmount
+  clearTimeout(timeoutId)
 })
 </script>
 
@@ -83,4 +79,11 @@ onBeforeUnmount(() => {
   from, to { opacity: 1; }
   50% { opacity: 0; }
 }
+
+@media(max-width: 768px) {
+  .typewriter-text {
+    font-size: 30px;
+  }
+}
+
 </style>

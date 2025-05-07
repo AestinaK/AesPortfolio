@@ -1,17 +1,15 @@
 <template>
   <div class="contact-page">
-    <!-- Shared decorative elements -->
     <div class="decor-circle circle-1"></div>
     <div class="decor-circle circle-2"></div>
     <div class="decor-blob"></div>
 
     <div class="content-container">
-      <!-- Left side - Contact form -->
       <div class="contact-form-container">
         <h1 class="title">
           <span class="greeting">Get In Touch</span>
           <Typewriter
-              :texts="['Let\'s Collaborate', 'Contact Me', 'Build Something Amazing']"
+              :texts="['Let\'s Collaborate', 'Build Something Amazing']"
               :speed="100"
           />
         </h1>
@@ -64,7 +62,6 @@
         </form>
       </div>
 
-      <!-- Right side - Contact info -->
       <div class="contact-info">
         <div class="info-card glow-card">
           <div class="icon-container">
@@ -98,7 +95,6 @@
       </div>
     </div>
 
-    <!-- Floating decoration -->
     <div class="floating-dots"></div>
   </div>
 </template>
@@ -111,7 +107,6 @@ import LinkedInIcon from '../components/icons/LinkedInIcon.vue'
 import TwitterIcon from '../components/icons/TwitterIcon.vue'
 import FacebookIcon from "../components/icons/FacebookIcon.vue";
 
-// Form handling
 const form = ref({
   name: '',
   email: '',
@@ -135,16 +130,13 @@ const checkFloatLabel = (field) => {
 }
 
 const handleSubmit = () => {
-  // Handle form submission
   console.log('Form submitted:', form.value)
-  // Reset form
   form.value = { name: '', email: '', message: '' }
   Object.keys(floatLabels.value).forEach(key => {
     floatLabels.value[key] = false
   })
 }
 
-// Social links
 const socials = ref([
   { name: 'github', url: 'https://github.com/AestinaK', icon: GithubIcon },
   { name: 'linkedin', url: 'https://linkedin.com/in/aestina-katwal-040036249', icon: LinkedInIcon },
@@ -271,7 +263,7 @@ const socials = ref([
     display: grid;
     gap: 2rem;
     position: sticky;
-    top: 2rem;
+    margin-top: 2rem;
   }
 
   .info-card {
@@ -322,7 +314,7 @@ const socials = ref([
     gap: 1.5rem;
     justify-content: center;
     margin-top: 1rem;
-
+    -webkit-tap-highlight-color: transparent;
     .social-icon {
       width: 40px;
       height: 40px;
@@ -364,8 +356,7 @@ const socials = ref([
   }
 }
 
-// Responsive adjustments
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .content-container {
     grid-template-columns: 1fr !important;
   }
@@ -374,6 +365,26 @@ const socials = ref([
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     margin-top: 3rem;
     position: static !important;
+  }
+  .greeting{
+    font-size: 2.5rem;
+  }
+
+  .submit-btn {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+    -webkit-tap-highlight-color: transparent;
+    &:active, &:focus {
+      background: linear-gradient(135deg, #42b983, #2c5364) !important;
+      outline: none !important;
+    }
+  }
+  .social-links{
+    .social-icon{
+      -webkit-tap-highlight-color: transparent;
+    }
   }
 }
 </style>

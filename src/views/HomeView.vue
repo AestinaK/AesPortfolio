@@ -114,7 +114,7 @@ const skills = ref([
   .content-container {
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 4rem;
   }
 
   .hero-section {
@@ -289,7 +289,7 @@ const skills = ref([
   }
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 1024px) {
   .hero-section {
     grid-template-columns: 1fr !important;
@@ -308,13 +308,26 @@ const skills = ref([
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .cta-buttons {
     flex-direction: column;
+    margin-left: 10px !important;
+    right: 1rem;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+    -webkit-tap-highlight-color: transparent;
+    &:active, &:focus {
+      background: linear-gradient(135deg, #42b983, #2c5364) !important;
+      outline: none !important;
+    }
   }
 
   .skills-grid {
     grid-template-columns: 1fr !important;
+  }
+
+  .section-title{
+    font-size:20px;
   }
 }
 </style>

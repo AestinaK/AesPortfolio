@@ -275,6 +275,18 @@ const goToContact = () => {
         font-size: 0.8rem;
       }
     }
+
+    .floating-cta {
+      bottom: 1rem;
+      right: 1rem;
+      padding: 0.8rem 1.2rem;
+      font-size: 0.9rem;
+      -webkit-tap-highlight-color: transparent;
+      &:active, &:focus {
+        background: linear-gradient(135deg, #42b983, #2c5364) !important;
+        outline: none !important;
+      }
+    }
   }
 }
 </style>

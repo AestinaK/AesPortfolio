@@ -1,12 +1,10 @@
 <template>
   <div class="about-page">
-    <!-- Animated background elements -->
     <div class="decor-circle circle-1"></div>
     <div class="decor-circle circle-2"></div>
     <div class="decor-blob"></div>
 
     <div class="content-container">
-      <!-- Profile section with floating effect -->
       <div class="profile-section" @mousemove="handleParallax">
         <div class="profile-image" ref="profileImage">
           <img src="../assets/profile.jpg" alt="aestina" />
@@ -14,7 +12,6 @@
         <div class="profile-glow"></div>
       </div>
 
-      <!-- Main content with typewriter effect -->
       <div class="text-content">
         <h1 class="title">
           <span class="greeting">Hello!</span>
@@ -40,7 +37,6 @@
           </div>
         </div>
 
-        <!-- Skill matrix -->
         <div class="skills-matrix">
           <div
               v-for="(skill, index) in skills"
@@ -56,7 +52,6 @@
         </div>
       </div>
 
-      <!-- Floating action button -->
       <button class="floating-cta" @click="downloadResume">
         <span>Download Resume</span>
         <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
@@ -69,7 +64,6 @@
 import { ref, computed } from 'vue'
 import Typewriter from '../components/Typewriter.vue'
 
-// Parallax effect for profile image
 const profileImage = ref(null)
 const handleParallax = (e) => {
   if (profileImage.value) {
@@ -79,11 +73,9 @@ const handleParallax = (e) => {
   }
 }
 
-// Calculate years of experience
 const startYear = 2021
 const yearsOfExperience = computed(() => new Date().getFullYear() - startYear)
 
-// Skills data
 const skills = ref([
   { name: 'C# / .NET', level: 90 },
   { name: 'ASP.NET Core', level: 85 },
@@ -95,12 +87,11 @@ const skills = ref([
 ])
 
 const downloadResume = () => {
-  // Method 1: Direct public folder access (recommended)
   const fileUrl = '/documents/AestinaCv.pdf'
   const link = document.createElement('a')
   link.href = fileUrl
-  link.download = 'AestinaCv.pdf' // Custom filename for download
-  link.target = '_blank' // Open in new tab as fallback
+  link.download = 'AestinaCv.pdf'
+  link.target = '_blank'
   document.body.appendChild(link)
   link.click()
   document.body.removeChild(link)
@@ -121,7 +112,9 @@ const downloadResume = () => {
   align-items: center;
   justify-content: center;
 
-  // Decorative elements
+  margin: 0 auto;
+  box-sizing: border-box;
+
   .decor-circle {
     position: absolute;
     border-radius: 50%;
@@ -169,7 +162,6 @@ const downloadResume = () => {
     gap: 4rem;
     align-items: center;
   }
-
   .profile-section {
     position: relative;
     width: 350px;
@@ -204,6 +196,7 @@ const downloadResume = () => {
       animation: pulse 4s ease-in-out infinite;
     }
   }
+
 
   .text-content {
     .title {
@@ -325,7 +318,6 @@ const downloadResume = () => {
   }
 }
 
-// Animations
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-20px); }
@@ -342,7 +334,6 @@ const downloadResume = () => {
   100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
 }
 
-// Responsive adjustments
 @media (max-width: 1024px) {
   .content-container {
     grid-template-columns: 1fr;
@@ -362,4 +353,88 @@ const downloadResume = () => {
     }
   }
 }
+
+@media (max-width: 768px) {
+  .about-page {
+    padding-top: 20px;
+    height: auto;
+    min-height: calc(100vh - 80px);
+
+    .content-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 1rem;
+    }
+
+    .profile-section {
+      width: 250px;
+      height: 300px;
+      //margin: 0 auto 2rem;
+      margin-top: 4rem;
+
+      .profile-image {
+        border-width: 2px;
+      }
+    }
+
+    .text-content {
+      padding: 0 1rem;
+      .title {
+        font-size: 2rem;
+
+        .greeting {
+          font-size: 1.5rem;
+        }
+      }
+
+      .lead-text {
+        font-size: 1.1rem;
+      }
+    }
+
+    .skills-matrix {
+      .skill-item {
+        grid-template-columns: 100px 1fr;
+
+        .skill-name {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .decor-circle {
+      &.circle-1 {
+        width: 200px;
+        height: 200px;
+      }
+
+      &.circle-2 {
+        width: 300px;
+        height: 300px;
+      }
+    }
+
+    .decor-blob {
+      width: 300px;
+      height: 300px;
+    }
+
+    .floating-cta {
+      bottom: 1rem;
+      right: 1rem;
+      padding: 0.8rem 1.2rem;
+      font-size: 0.9rem;
+      -webkit-tap-highlight-color: transparent;
+      &:active, &:focus {
+        background: linear-gradient(135deg, #42b983, #2c5364) !important;
+        outline: none !important;
+      }
+    }
+    .floating-cta,
+    .skills-matrix .skill-item {
+      min-height: 44px;
+    }
+  }
+}
+
 </style>
